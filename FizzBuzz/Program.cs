@@ -22,13 +22,33 @@ namespace FizzBuzz
                 Console.WriteLine("{0} is not an integer", givenAnswer);
                 Console.WriteLine("Try again!");
                 GettingInfo();
-                return 0; //Program.Gettinginfo()': not all code path return a value --> easy xD
+                return 0;
             }
+        }
+        static void CheckDivisibility(int numberToCheck)
+        {
+            for (int i=1; i<=numberToCheck; i++)
+            if (i % 15 == 0)
+                {
+                    Console.WriteLine(i + " FizzBuzz");
+                }
+            else if (i % 5 == 0)
+                {
+                    Console.WriteLine(i + " Buzz");
+                }
+            else if (i % 3 == 0)
+                {
+                    Console.WriteLine(i + " Fizz");
+                }
+            else
+                {
+                    Console.WriteLine(i);
+                }
         }
         static void DoFizzBuzz()
         {
-            int x = GettingInfo();
-            Console.WriteLine(x);
+            int receivedNumber = GettingInfo();
+            CheckDivisibility(receivedNumber);
         }
     }
 }
